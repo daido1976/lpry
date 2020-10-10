@@ -11,6 +11,13 @@ RSpec.describe Lpry do
       end
     end
 
+    context 'when passed the instance method string' do
+      it 'returns true' do
+        require 'csv'
+        expect(Lpry.show_source('CSV#each')).to eq(true)
+      end
+    end
+
     context 'when passed the invalid string' do
       it 'raises InvalidArgument' do
         expect { Lpry.show_source('') }.to raise_error(Lpry::InvalidArgument)

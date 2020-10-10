@@ -17,7 +17,15 @@ module Lpry
       puts File.readlines(file_path)[line - 1..line + 5]
       true
     elsif method_str.include?('#')
-      # TODO
+      c, m = method_str.split('#')
+      klass = Object.const_get(c)
+      method_obj = klass.instance_method(m)
+
+      puts "Lpry prints #{method_obj}"
+
+      file_path, line = method_obj.source_location
+      puts File.readlines(file_path)[line - 1..line + 5]
+      true
     else
       raise InvalidArgument
     end
