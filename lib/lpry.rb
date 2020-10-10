@@ -6,10 +6,11 @@ module Lpry
   INSTANCE_SEPARATOR = '#'.freeze
 
   # @param method_str [String] e.g. 'CSV.open', 'CSV#each'
+  # @param lines [Integer] number of output lines
   # @return [Boolean]
-  def self.show_source(method_str)
+  def self.show_source(method_str, lines = 10)
     method_obj = build_method_object(method_str)
-    print_source(method_obj)
+    print_source(method_obj, lines)
     true
   end
 
@@ -30,10 +31,12 @@ module Lpry
   end
 
   # @param method_obj [Method, UnboundMethod]
+  # @param lines [Integer] number of output lines
   # @return [void]
-  def self.print_source(method_obj)
+  def self.print_source(method_obj, lines = 10)
     puts "Lpry prints #{method_obj}"
-    file_path, line = method_obj.source_location
-    puts File.readlines(file_path)[line - 1..line + 5]
+    file_path, source_line = method_obj.source_location
+    start_line = source_line - 1
+    puts File.readlines(file_path)[start_line...start_line + lines]
   end
 end
