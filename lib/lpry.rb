@@ -4,4 +4,8 @@ module Lpry
   def self.greet
     "Hello world!"
   end
+
+  def self.greet!
+    "Hello world!!!"
+  end
 end
