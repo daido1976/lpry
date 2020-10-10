@@ -3,7 +3,7 @@ RSpec.describe Lpry do
     expect(Lpry::VERSION).not_to be nil
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  it "says hello world" do
+    expect(Lpry.greet).to eq('Hello world!')
   end
 end

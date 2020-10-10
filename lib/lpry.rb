@@ -1,6 +1,7 @@
 require "lpry/version"
 
 module Lpry
-  class Error < StandardError; end
-  # Your code goes here...
+  def self.greet
+    "Hello world!"
+  end
 end
