@@ -27,9 +27,9 @@ $ irb
 
 > require 'csv'
 > Lpry.show_source 'CSV.open'
-#=> Output sources of `CSV.open`
+#=> Output the source of `CSV.open`
 > Lpry.show_source 'CSV#each'
-#=> Output sources of `CSV#each`
+#=> Output the source of `CSV#each`
 ```
 
 ## Development

@@ -20,7 +20,7 @@ RSpec.describe Lpry do
 
     context 'when passed the invalid string' do
       it 'raises InvalidArgument' do
-        expect { Lpry.show_source('') }.to raise_error(Lpry::InvalidArgument)
+        expect { Lpry.show_source('') }.to raise_error(Lpry::ShowSource::InvalidArgument)
       end
     end
   end
