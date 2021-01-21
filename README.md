@@ -1,6 +1,6 @@
 # Lpry
 
-Lpry aims to be a light-weight [pry](https://github.com/pry/pry). Mainly wants to support [Source code browsing](https://github.com/pry/pry#code-browsing).
+Lpry aims to be a light-weight [pry](https://github.com/pry/pry). Mainly wants to support [Documentation Browsing](https://github.com/pry/pry#documentation-browsing).
 
 ## Installation
 
